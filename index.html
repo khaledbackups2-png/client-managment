@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نظام إدارة العملاء</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>إدارة العملاء</h1>
+
+<div id="paymentSummary">
+  <strong>إجمالي الدفع: </strong><span id="totalPayment">0</span>
+</div>
+
+<div>
+  <input type="text" id="clientName" placeholder="اسم العميل">
+  <input type="text" id="phone" placeholder="رقم التليفون">
+  <input type="text" id="service" placeholder="الخدمة">
+  <input type="text" id="status" placeholder="حالة الخدمة">
+  <input type="number" id="payment" placeholder="الدفع">
+  <input type="text" id="comment" placeholder="تعليق">
+  <input type="text" id="responsible" placeholder="المسؤول">
+  <button onclick="addClient()">إضافة عميل</button>
+  <button onclick="downloadCSV()">تنزيل البيانات</button>
+</div>
+
+<table id="clientsTable">
+  <thead>
+    <tr>
+      <th>اسم العميل</th>
+      <th>رقم التليفون</th>
+      <th>الخدمة</th>
+      <th>حالة الخدمة</th>
+      <th>الدفع</th>
+      <th>تعليق</th>
+      <th>المسؤول</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
